@@ -32,7 +32,7 @@ public class ControllerHelper {
                 if(ArrayUtil.isNotEmpty(methods)){
                     for (Method method:methods){
                         //判断当前方法是否带有action注解
-                        if(method.isAnnotationPresent(Inject.class)){
+                        if(method.isAnnotationPresent(Action.class)){
                             //从action注解中获取URL映射规则
                             Action action=method.getAnnotation(Action.class);
                             String mapping=action.value();
