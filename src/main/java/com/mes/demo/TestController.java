@@ -2,6 +2,7 @@ package com.mes.demo;
 
 import org.smart4j.framework.annotation.Action;
 import org.smart4j.framework.annotation.Controller;
+import org.smart4j.framework.bean.Param;
 import org.smart4j.framework.bean.View;
 
 import java.text.SimpleDateFormat;
@@ -16,9 +17,9 @@ import java.util.Date;
 @Controller
 public class TestController {
 
-    @Action("query:/query")
-    public View query(){
-        View view=new View("/test.jsp");
+    @Action("get:/query")
+    public View query(Param param){
+        View view=new View("test.jsp");
         SimpleDateFormat dateFormat=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         String currentTime=dateFormat.format(new Date());
         view.addModel("currentTime",currentTime);
